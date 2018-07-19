@@ -1,8 +1,5 @@
-import { AngularFireAuth } from 'angularfire2/auth';
-import { Component, OnInit } from '@angular/core';
-import * as firebase from 'firebase';
-import { Observable } from '../../../node_modules/rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +8,14 @@ import { switchMap } from 'rxjs/operators';
 })
 export class LoginComponent {
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private auth: AuthService) { }
 
   logIn() {
-    this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+  this.auth.login();
     // console.log('Log me in');
   }
 
   logOut() {
-    this.afAuth.auth.signOut();
+    this.auth.logOut();
   }
 }
