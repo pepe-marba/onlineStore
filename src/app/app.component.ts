@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
+import { AuthService } from './services/auth.service';
+import { Router } from '../../node_modules/@angular/router';
 
 
 @Component({
@@ -7,16 +9,16 @@ import { environment } from '../environments/environment';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  title = 'app';
-
-
-  ngOnInit(): void {
-    // AppGlobals.GOOGLE_CLIENT_ID = environment.googleAppConfig.client_id;
+  constructor(private auth: AuthService, router: Router){
+    auth.user$.subscribe(user => {
+      if (user){
+        const returnUrl = localStorage.getItem('returnUrl');
+        router.navigateByUrl(returnUrl);
+      }
+    });
   }
 
 }
 
-// Client ID
-// 141505788232-dad281dt89f3tivvft1juhi4apvqpcjq.apps.googleusercontent.com
