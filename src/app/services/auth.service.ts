@@ -1,8 +1,12 @@
+import { UserService } from './user.service';
+import { AppUser } from './../models/app-user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { Observable } from '../../../node_modules/rxjs';
 import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { map, switchMap } from '../../../node_modules/rxjs/operators';
+import { AngularFireObject } from '../../../node_modules/angularfire2/database';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +14,10 @@ import { ActivatedRoute } from '../../../node_modules/@angular/router';
 export class AuthService {
 
   user$: Observable<firebase.User>;
-  constructor(private afAuth: AngularFireAuth, private route: ActivatedRoute) {
+  userFromDB: AngularFireObject<AppUser>;
+  userObs: AppUser;
+  constructor(
+    private afAuth: AngularFireAuth, private route: ActivatedRoute, private userService: UserService) {
     this.user$ = afAuth.authState;
   }
 
@@ -25,4 +32,16 @@ export class AuthService {
 
     this.afAuth.auth.signOut();
   }
+
+  // get appUser$(): Observable<AppUser> {
+  //   return this.user$.pipe(
+  //     map((user: firebase.User) => {
+  //       this.userFromDB = this.userService.get(user.uid);
+  //       this.userFromDB.valueChanges().subscribe(myUser => {
+  //         this.userObs = myUser;
+  //         return myUser;
+  //       });
+  //       return this.userObs;
+  //     }));
+  // }
 }
