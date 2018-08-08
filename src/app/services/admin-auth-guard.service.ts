@@ -40,5 +40,17 @@ export class AdminAuthGuard implements CanActivate {
     const isMyUserAdmin = this.canActivate();
     const user = isMyUserAdmin.pipe(map(x => x));
     return user;
+    // let fbUser: any;
+    // let appUser: any;
+    // this.auth.user$.subscribe(x => fbUser = x);
+    // appUser = this.userService.get(fbUser.uid).valueChanges();
+    // appUser.suscribe(x => {
+    //   if (x) return x.isAdmin;
+
+    //   return false;
+    // });
+
+    // return Observable(() => return false);
+
   }
 }
