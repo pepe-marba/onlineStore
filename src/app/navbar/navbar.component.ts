@@ -17,7 +17,6 @@ export class NavbarComponent  {
     // Before using async Pipe
     // afAuth.authState.subscribe(userFromServer => this.user = userFromServer);
     this.isAdmin$ = this.adminGuardService.isUserAdmin();
-    this.isAdmin$.subscribe(x => console.log('asdasdasd', x));
   }
 
   logOut() {

@@ -24,14 +24,13 @@ export class AdminAuthGuard implements CanActivate {
                 map((user: firebase.User) => {
                     this.userFromDB = this.userService.get(user.uid);
                     this.userFromDB.valueChanges().subscribe(myUser => {
-                      console.log(myUser);
-                      console.log(myUser.name);
-                      console.log(myUser.isAdmin);
-                      console.log(myUser.email);
+                      // console.log(myUser);
+                      // console.log(myUser.name);
+                      // console.log(myUser.isAdmin);
+                      // console.log(myUser.email);
                       this.isAdmin = myUser.isAdmin;
                       return this.isAdmin;
                     });
-                    console.log('MyUser admin---->', this.isAdmin);
                     return this.isAdmin;
                 }));
   }
