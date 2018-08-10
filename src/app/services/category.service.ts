@@ -13,7 +13,7 @@ export class CategoryService {
     return this.db.list('categories',
       query => query.orderByChild('name')
             ).snapshotChanges()
-            .pipe(map(items => { .
+            .pipe(map(items => {
               return items.map(a => {
                 const data = a.payload.val();
                 const key = a.payload.key;

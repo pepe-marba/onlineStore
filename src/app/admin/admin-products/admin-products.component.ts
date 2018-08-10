@@ -10,7 +10,7 @@ import { Product } from '../../models/product';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
-  products: Product[];
+  products: any[];
   filteredProducts: any[];
   susbcription: Subscription;
 
