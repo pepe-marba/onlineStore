@@ -1,9 +1,7 @@
-import { CategoryService } from './../services/category.service';
+
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '../../../node_modules/@angular/router';
-import { Product } from '../models/product';
-import { tick } from '../../../node_modules/@angular/core/testing';
 import { switchMap } from '../../../node_modules/rxjs/operators';
 
 @Component({
@@ -14,10 +12,10 @@ import { switchMap } from '../../../node_modules/rxjs/operators';
 export class ProductsComponent {
   products: any[] = [ ];
   filteredProducts: any[] = [ ];
-  categories$: any;
   categoryId: string;
 
-  constructor(productService: ProductService, categoryService: CategoryService, route: ActivatedRoute) {
+  constructor(productService: ProductService,
+    route: ActivatedRoute) {
 
     // productService.getAll().subscribe(product => {
     //   this.products = product;
@@ -53,8 +51,6 @@ export class ProductsComponent {
           this.products.filter(p => p.data.category === this.categoryId) :
           this.products;
       });
-
-    this.categories$ = categoryService.getAll();
   }
 
 
