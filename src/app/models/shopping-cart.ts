@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './../services/shopping-cart.service';
 import { ProductInCart } from './productInCart';
 import { forEach } from '../../../node_modules/@angular/router/src/utils/collection';
 import { Product } from './product';
@@ -5,7 +6,7 @@ export class ShoppingCart{
 
     itemsWithPrice: ProductInCart[] = [];
     productInCart: ProductInCart;
-    constructor(public items: ProductInCart[]){}
+    constructor(public items: ProductInCart[] = []){}
 
     get productIds(){
       // console.log('My items', this.items);
@@ -21,6 +22,7 @@ export class ShoppingCart{
 
 
     getQuantity(product: Product) {
+     
       const item = this.items[product.key];
       return item ? item.quantity : 0;
     }
@@ -43,5 +45,4 @@ export class ShoppingCart{
       }
       return count;
     }
-
 }

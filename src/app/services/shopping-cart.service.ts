@@ -26,6 +26,12 @@ export class ShoppingCartService {
       .pipe(map(x => new ShoppingCart(x.items)));
   }
 
+  async clearCart(){
+    let cartId = await this.getOrCreateCartId();
+    this.db.object('/shopping-carts/' + cartId + '/items').remove();
+
+  }
+
   private getItem(cartId: string, productId: string){
     return this.db.object("/shopping-carts/" + cartId + '/items/' + productId);
   }
