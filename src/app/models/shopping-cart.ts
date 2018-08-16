@@ -1,6 +1,4 @@
-import { ShoppingCartService } from './../services/shopping-cart.service';
 import { ProductInCart } from './productInCart';
-import { forEach } from '../../../node_modules/@angular/router/src/utils/collection';
 import { Product } from './product';
 export class ShoppingCart{
 
