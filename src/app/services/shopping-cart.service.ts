@@ -69,7 +69,14 @@ export class ShoppingCartService {
     item$.valueChanges().pipe(take(1))
       .subscribe(
        (item:ProductInCart) => {
-          item$.update({product: product, quantity: (item ? item.quantity : 0) + change});
+          let itemQuantity = (item ? item.quantity : 0) + change;
+
+          if(itemQuantity === 0){
+            item$.remove();
+          }
+          else {
+            item$.update({product: product, quantity: itemQuantity});
+          }
         }
       );
   }
