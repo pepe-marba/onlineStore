@@ -1,10 +1,10 @@
-import { ProductInCart } from './../models/productInCart';
+import { ProductInCart } from 'shared/models/productInCart';
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireObject } from '../../../node_modules/angularfire2/database';
-import { Product } from '../models/product';
-import { pipe, Observable } from '../../../node_modules/rxjs';
-import { take, map } from '../../../node_modules/rxjs/operators';
-import { ShoppingCart } from '../models/shopping-cart';
+import { AngularFireDatabase, AngularFireObject } from '../../../../node_modules/angularfire2/database';
+import { Product } from 'shared/models/product';
+import { pipe, Observable } from '../../../../node_modules/rxjs';
+import { take, map } from '../../../../node_modules/rxjs/operators';
+import { ShoppingCart } from 'shared/models/shopping-cart';
 
 @Injectable({
   providedIn: 'root'

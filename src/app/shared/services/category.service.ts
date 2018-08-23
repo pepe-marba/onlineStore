@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, listChanges } from '../../../node_modules/angularfire2/database';
-import { map } from '../../../node_modules/rxjs/operators';
+import { AngularFireDatabase, listChanges } from '../../../../node_modules/angularfire2/database';
+import { map } from '../../../../node_modules/rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

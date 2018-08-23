@@ -1,5 +1,5 @@
-import { ProductService } from './../../services/product.service';
-import { CategoryService } from './../../services/category.service';
+import { ProductService } from 'shared/services/product.service';
+import { CategoryService } from 'shared/services/category.service';
 import { Component, OnInit } from '@angular/core';
 import { take } from '../../../../node_modules/rxjs/operators';
 import { Router, ActivatedRoute } from '../../../../node_modules/@angular/router';

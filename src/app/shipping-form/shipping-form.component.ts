@@ -1,9 +1,9 @@
-import { AuthService } from './../services/auth.service';
+import { AuthService } from 'shared/services/auth.service';
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { Order } from '../models/order';
+import { Order } from 'shared/models/order';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
-import { OrderService } from '../services/order.service';
+import { OrderService } from 'shared/services/order.service';
 
 @Component({
   // tslint:disable-next-line:component-selector
