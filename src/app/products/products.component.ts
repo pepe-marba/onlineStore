@@ -25,7 +25,7 @@ export class ProductsComponent implements OnInit {
     private route: ActivatedRoute) {
 
     // productService.getAll().subscribe(product => {
-    //   this.products = product; 
+    //   this.products = product;
 
     //   // we need to have information in the products array in order to filter the products
     //   // when the page is loaded for the first time
@@ -42,7 +42,7 @@ export class ProductsComponent implements OnInit {
 
     // });
 
-    // we replaced the previous implementation in order to avoid having a suscriber inside another suscriber 
+    // we replaced the previous implementation in order to avoid having a suscriber inside another suscriber
     // queryParam subscriber inside products suscriber
     // With this implementation we swtich from the first suscriber (GetAll products) to the second one QueryParams suscriber
 
@@ -53,7 +53,7 @@ export class ProductsComponent implements OnInit {
     this.populateProducts();
 
   }
-   
+
   private applyFilter(){
 
     this.filteredProducts = (this.categoryId) ?

@@ -1,3 +1,4 @@
-<p>
-  my-orders works!
-</p>
+<h1>My Orders</h1>
+<div *ngIf="orders$ | async as orders">
+  <orders-list [orders]="orders"></orders-list>
+</div>

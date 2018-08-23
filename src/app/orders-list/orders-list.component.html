@@ -1,0 +1,20 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.shippingInfo.customerName}}</td>
+        <td>{{ order.datePlaced | date:'shortDate'}}</td>
+        <td>
+          <a href="#">View</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
