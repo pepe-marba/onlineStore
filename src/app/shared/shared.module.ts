@@ -1,3 +1,4 @@
+import { OrdersListComponent } from 'shared/components/orders-list/orders-list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from 'shared/components/product-card/product-card.component';
@@ -16,11 +17,13 @@ import { OrderService } from 'shared/services/order.service';
   ],
   declarations: [
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    OrdersListComponent
   ],
   exports: [
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    OrdersListComponent
   ],
   providers: [
     AuthService,

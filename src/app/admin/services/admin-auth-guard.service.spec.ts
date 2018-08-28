@@ -1,4 +1,4 @@
-import { AdminAuthGuard } from 'shared/services/admin-auth-guard.service';
+import { AdminAuthGuard } from './admin-auth-guard.service';
 import { TestBed, inject } from '@angular/core/testing';
 
 
