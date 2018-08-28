@@ -4,9 +4,11 @@
   <p>
     You have {{ cart.totalItemsCount }} items in your shopping cart.
     <button
-    *ngIf="cart"
-    (click)="clearCart()"
-    class="btn btn-light btn-sm">Clear Shopping Cart</button>
+      *ngIf="cart"
+      (click)="clearCart()"
+      class="float-right btn btn-light btn-sm">
+        Clear Shopping Cart
+    </button>
   </p>
   <table class="table">
     <thead>
