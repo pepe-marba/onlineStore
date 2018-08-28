@@ -16,11 +16,11 @@ import { AuthGuard } from 'shared/services/auth-guard.service';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { CheckOutComponent } from './shopping/components/check-out/check-out.component';
-import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { DropdownMenuComponent } from './core/components/dropdown-menu/dropdown-menu.component';
+import { HomeComponent } from './core/components/home/home.component';
+import { LoginComponent } from './core/components/login/login.component';
 import { MyOrdersComponent } from './shopping/components/my-orders/my-orders.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { OrderSuccessComponent } from './shopping/components/order-success/order-success.component';
 import { ProductFilterComponent } from './shopping/components/products/product-filter/product-filter.component';
 import { ProductsComponent } from './shopping/components/products/products.component';
@@ -31,24 +31,21 @@ import { ProductFormComponent } from './admin/components/product-form/product-fo
 import { AdminProductsComponent } from './admin/components/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/components/admin-orders/admin-orders.component';
 import { ShoppingModule } from './shopping/shopping.module';
+import { CoreModule } from './core/core.module';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DropdownMenuComponent,
-    NavbarComponent,
-    HomeComponent,
-    LoginComponent
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
     SharedModule,
     AdminModule,
     ShoppingModule,
+    CoreModule,
     FormsModule,
     CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

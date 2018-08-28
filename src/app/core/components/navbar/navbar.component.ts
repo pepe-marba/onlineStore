@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'shared/services/auth.service';
 import { AppUser } from 'shared/models/app-user';
-import { AdminAuthGuard } from '../admin/services/admin-auth-guard.service';
-import { map } from '../../../node_modules/rxjs/operators';
-import { Observable } from '../../../node_modules/rxjs';
+import { AdminAuthGuard } from '../../../admin/services/admin-auth-guard.service';
+import { map } from '../../../../../node_modules/rxjs/operators';
+import { Observable } from '../../../../../node_modules/rxjs';
 import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 import { ShoppingCart } from 'shared/models/shopping-cart';
 
